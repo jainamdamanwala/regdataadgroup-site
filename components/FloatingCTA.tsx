@@ -22,7 +22,7 @@ export default function FloatingCTA() {
     >
       <a
         href={brand.consultLink}
-        className="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white shadow-premium hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-blue-100"
+        className="rounded-2xl bg-brand-blue px-4 py-3 text-sm font-semibold text-white shadow-premium hover:bg-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30"
       >
         Book Complimentary Consult
       </a>

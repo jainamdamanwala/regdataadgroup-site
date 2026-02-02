@@ -6,19 +6,12 @@ import SectionHeader from "./SectionHeader";
 import { brand } from "@/lib/content";
 
 // === CONFIG ===
-// If true, shows Calendly inline embed instead of the form.
-// Put a real Calendly URL below when client provides it.
 const USE_CALENDLY_EMBED = false;
-
-// Example: "https://calendly.com/your-org/consultation"
 const CALENDLY_URL = "https://calendly.com/REPLACE_ME/consultation";
-
-// Formspree endpoint (replace)
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_ME";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
   const locations = useMemo(() => brand.locations, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -54,7 +47,7 @@ export default function Contact() {
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          {/* LEFT: Form or Calendly */}
+          {/* LEFT */}
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-premium">
             <div className="flex items-center justify-between gap-4">
               <div>
@@ -70,31 +63,18 @@ export default function Contact() {
               <span className="chip">30 minutes</span>
             </div>
 
-            {/* Calendly Embed */}
             {USE_CALENDLY_EMBED ? (
               <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-                <iframe
-                  src={CALENDLY_URL}
-                  className="h-[720px] w-full"
-                  frameBorder="0"
-                  title="Schedule Consultation"
-                />
+                <iframe src={CALENDLY_URL} className="h-[720px] w-full" frameBorder="0" title="Schedule Consultation" />
               </div>
             ) : (
-              /* Formspree Form */
               <form onSubmit={onSubmit} className="mt-6 grid gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Name" name="name" required placeholder="Your name" />
                   <Field label="Company" name="company" placeholder="Company / organization" />
                 </div>
 
-                <Field
-                  label="Email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="you@company.com"
-                />
+                <Field label="Email" name="email" type="email" required placeholder="you@company.com" />
 
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Select
@@ -111,12 +91,7 @@ export default function Contact() {
                       "Other",
                     ]}
                   />
-                  <Select
-                    label="Region"
-                    name="region"
-                    required
-                    options={["U.S. (FDA)", "EU (MDR/IVDR)", "U.K.", "Global"]}
-                  />
+                  <Select label="Region" name="region" required options={["U.S. (FDA)", "EU (MDR/IVDR)", "U.K.", "Global"]} />
                 </div>
 
                 <Textarea
@@ -127,16 +102,12 @@ export default function Contact() {
                   placeholder="Briefly describe the product, timeline, and what support you need."
                 />
 
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="btn-accent"
-                >
+                <button type="submit" disabled={status === "sending"} className="btn-accent">
                   {status === "sending" ? "Sending..." : "Submit"}
                 </button>
 
                 {status === "sent" ? (
-                  <div className="rounded-2xl border border-green-200 bg-green-50 p-4">
+                  <div className="rounded-2xl border border-brand-green/30 bg-brand-green/10 p-4">
                     <p className="text-sm font-semibold text-slate-900">
                       Thanks — we received your message and will follow up shortly.
                     </p>
@@ -144,8 +115,8 @@ export default function Contact() {
                 ) : null}
 
                 {status === "error" ? (
-                  <div className="rounded-2xl border border-red-200 bg-red-50 p-4">
-                    <p className="text-sm font-semibold text-red-700">
+                  <div className="rounded-2xl border border-brand-blue/25 bg-brand-blue/10 p-4">
+                    <p className="text-sm font-semibold text-brand-blue">
                       Something went wrong. Please try again or email us directly.
                     </p>
                   </div>
@@ -158,7 +129,7 @@ export default function Contact() {
             )}
           </div>
 
-          {/* RIGHT: Locations + Quick Notes */}
+          {/* RIGHT */}
           <div className="grid gap-6">
             <div className="card lift-strong">
               <h4 className="text-sm font-semibold text-slate-950">Locations</h4>
@@ -173,7 +144,7 @@ export default function Contact() {
             </div>
 
             <div className="rounded-3xl border border-slate-200 bg-premium-medical p-6 shadow-premium relative overflow-hidden">
-              <p className="text-xs font-semibold tracking-wide text-blue-700">WHAT TO EXPECT</p>
+              <p className="text-xs font-semibold tracking-wide text-brand-blue">WHAT TO EXPECT</p>
               <ul className="mt-4 grid gap-3 text-sm text-slate-700">
                 <li className="rounded-2xl border border-slate-200 bg-white/70 p-4">
                   Senior-led review of product type, pathway, evidence, and risk.
@@ -198,7 +169,7 @@ export default function Contact() {
 }
 
 function baseInputClass() {
-  return "rounded-xl border border-slate-200 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-blue-100";
+  return "rounded-xl border border-slate-200 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-brand-teal/25 focus:border-brand-teal";
 }
 
 function Field({
@@ -217,13 +188,7 @@ function Field({
   return (
     <div className="grid gap-2">
       <label className="text-sm font-semibold text-slate-900">{label}</label>
-      <input
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className={baseInputClass()}
-      />
+      <input name={name} type={type} required={required} placeholder={placeholder} className={baseInputClass()} />
     </div>
   );
 }
@@ -244,13 +209,7 @@ function Textarea({
   return (
     <div className="grid gap-2">
       <label className="text-sm font-semibold text-slate-900">{label}</label>
-      <textarea
-        name={name}
-        required={required}
-        rows={rows}
-        placeholder={placeholder}
-        className={baseInputClass()}
-      />
+      <textarea name={name} required={required} rows={rows} placeholder={placeholder} className={baseInputClass()} />
     </div>
   );
 }

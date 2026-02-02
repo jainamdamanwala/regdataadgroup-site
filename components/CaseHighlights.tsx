@@ -34,8 +34,9 @@ export default function CaseHighlights() {
             <div key={c.title} className="card lift-strong">
               <p className="text-sm font-semibold text-slate-950">{c.title}</p>
               <p className="mt-3 text-sm text-slate-600">{c.body}</p>
+
               <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-semibold text-blue-700">Outcome</p>
+                <p className="text-xs font-semibold text-brand-blue">Outcome</p>
                 <p className="mt-2 text-sm text-slate-700">{c.outcome}</p>
               </div>
             </div>

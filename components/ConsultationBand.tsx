@@ -9,7 +9,7 @@ export default function ConsultationBand() {
           <div className="rounded-3xl border border-slate-200 bg-premium-medical p-8 shadow-premium">
             <div className="grid gap-6 lg:grid-cols-[1.6fr_1fr] lg:items-center">
               <div>
-                <p className="text-xs font-semibold tracking-wide text-blue-700">NEXT STEP</p>
+                <p className="text-xs font-semibold tracking-wide text-brand-blue">NEXT STEP</p>
                 <h3 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
                   Move forward with regulator-ready clarity
                 </h3>
@@ -26,9 +26,7 @@ export default function ConsultationBand() {
                 <a href="#services" className="btn-secondary">
                   Review service areas
                 </a>
-                <p className="text-xs text-slate-500">
-                  Typical response time: same business day.
-                </p>
+                <p className="text-xs text-slate-500">Typical response time: same business day.</p>
               </div>
             </div>
           </div>

@@ -9,7 +9,10 @@ export default function About() {
         <SectionHeader title={about.title} />
         <div className="grid gap-4">
           {about.paragraphs.map((p) => (
-            <div key={p} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft-sm">
+            <div
+              key={p}
+              className="rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-green/5 via-white to-brand-blue/5 p-6 shadow-soft-sm"
+            >
               <p className="text-slate-700">{p}</p>
             </div>
           ))}
