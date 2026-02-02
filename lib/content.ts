@@ -1,7 +1,7 @@
 export const brand = {
   name: "Reg & Data AdGroup LLC",
   tagline: "Senior Regulatory Strategy. Disciplined Execution. Trusted Under Scrutiny.",
-  locations: ["San Diego, CA", "Morrisville, NC"],
+  locations: ["San Diego, CA", "Morrisville, NC","Las Vegas, NV"],
   consultCta: "Let’s Get in Touch — 30-Minute Complimentary Consultation",
   // Replace with their real scheduling/contact URL (Calendly or similar) if needed:
   consultLink: "#contact",

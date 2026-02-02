@@ -1,9 +1,10 @@
 import Container from "./Container";
+import ScrollReveal from "./ScrollReveal";
 import { brand, hero } from "@/lib/content";
 
 export default function Hero() {
   return (
-    <section className="relative h-[55vh] w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -12,40 +13,52 @@ export default function Hero() {
         }}
       />
 
-      {/* Brand-tinted overlay (background only) */}
+      {/* Background overlays */}
       <div className="absolute inset-0 bg-white/35" />
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-green/15 via-brand-teal/10 to-brand-blue/15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[rgba(var(--brand-green),0.15)] via-transparent to-[rgba(var(--brand-blue),0.15)]" />
 
       <Container>
         <div className="section relative z-10">
           <div className="max-w-4xl">
-            <div className="flex flex-wrap gap-2">
-              <span className="chip">Senior-level leadership</span>
-              <span className="chip">FDA + Global pathways</span>
-              <span className="chip">Complex & emerging technologies</span>
-            </div>
+            <ScrollReveal>
+              <div className="flex flex-wrap gap-2">
+                <span className="chip">Senior-level leadership</span>
+                <span className="chip">FDA + Global pathways</span>
+                <span className="chip">Complex & emerging technologies</span>
+              </div>
+            </ScrollReveal>
 
-            <p className="mt-6 text-sm font-semibold text-slate-700">{brand.tagline}</p>
+            <ScrollReveal className="mt-6">
+              <p className="text-sm font-semibold text-slate-700">{brand.tagline}</p>
+            </ScrollReveal>
 
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-              {hero.headline}
-            </h1>
+            <ScrollReveal className="mt-4">
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+                {hero.headline}
+              </h1>
+            </ScrollReveal>
 
-            <p className="mt-6 text-lg text-slate-700">{hero.subhead}</p>
-            <p className="mt-4 text-slate-700">{hero.supporting}</p>
+            <ScrollReveal className="mt-6">
+              <p className="text-lg text-slate-700">{hero.subhead}</p>
+              <p className="mt-4 text-slate-700">{hero.supporting}</p>
+            </ScrollReveal>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href={brand.consultLink} className="btn-accent">
-                {brand.consultCta}
-              </a>
-              <a href="#services" className="btn-secondary">
-                Explore Services
-              </a>
-            </div>
+            <ScrollReveal className="mt-9">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a href={brand.consultLink} className="btn-accent">
+                  {brand.consultCta}
+                </a>
+                <a href="#services" className="btn-outline-brand">
+                  Explore Services
+                </a>
+              </div>
+            </ScrollReveal>
 
-            <p className="mt-6 text-xs text-slate-600">
-              Built for regulator-ready strategy and documentation—minimizing rework, review cycles, and avoidable risk.
-            </p>
+            <ScrollReveal className="mt-6">
+              <p className="text-xs text-slate-600">
+                Built for regulator-ready strategy and documentation—minimizing rework, review cycles, and avoidable risk.
+              </p>
+            </ScrollReveal>
           </div>
         </div>
       </Container>

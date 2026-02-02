@@ -21,7 +21,6 @@ export default function Navbar() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between">
-          {/* Logo + Brand */}
           <a href="#top" className="flex items-center gap-3">
             <div className="relative h-9 w-9 overflow-hidden rounded-xl bg-white shadow-soft-sm">
               <Image
@@ -34,37 +33,36 @@ export default function Navbar() {
             </div>
 
             <div className="leading-tight">
-              <p className="text-sm font-semibold tracking-tight text-white">
-                {brand.name}
-              </p>
-              <p className="text-xs text-white/80">
-                Regulatory Affairs & Data Strategy
-              </p>
+              <p className="text-sm font-semibold tracking-tight text-white">{brand.name}</p>
+              <p className="text-xs text-white/80">Regulatory Affairs & Data Strategy</p>
             </div>
           </a>
 
-          {/* Navigation */}
           <nav className="hidden items-center gap-6 md:flex">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-semibold text-white/90 transition hover:text-[rgb(var(--brand-teal))]"
+                className="group relative text-sm font-semibold text-white/90 transition"
               >
-                {l.label}
+                <span className="transition-colors duration-700 group-hover:text-white">
+                  {l.label}
+                </span>
+
+                {/* micro-interaction underline "wave" */}
+                <span
+                  className="pointer-events-none absolute -bottom-2 left-0 h-[2px] w-full scale-x-0 rounded-full opacity-0 transition-all duration-[900ms] ease-out group-hover:scale-x-100 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(var(--brand-green),0.9), rgba(var(--brand-teal),0.9), rgba(255,255,255,0.9))",
+                    transformOrigin: "left",
+                  }}
+                />
               </a>
             ))}
           </nav>
 
-          {/* CTA */}
-          <a
-            href={brand.consultLink}
-            className="inline-flex items-center justify-center rounded-xl border px-4 py-2 text-sm font-semibold text-white transition"
-            style={{
-              borderColor: "rgba(255,255,255,0.45)",
-              background: "rgba(255,255,255,0.08)",
-            }}
-          >
+          <a href={brand.consultLink} className="btn-accent">
             Complimentary Consult
           </a>
         </div>
