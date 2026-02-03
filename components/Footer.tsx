@@ -27,7 +27,7 @@ export default function Footer() {
               </div>
 
               <p className="mt-2 text-sm text-slate-600">
-                Regulatory affairs and data strategy. Senior-level
+                Regulatory science, powered by data. Senior-level
                 discipline. Startup agility.
               </p>
 

@@ -34,7 +34,7 @@ export default function Navbar() {
 
             <div className="leading-tight">
               <p className="text-sm font-semibold tracking-tight text-white">{brand.name}</p>
-              <p className="text-xs text-white/80">Regulatory Affairs & Data Strategy</p>
+              <p className="text-xs text-white/80">Regulatory science, powered by data</p>
             </div>
           </a>
 
