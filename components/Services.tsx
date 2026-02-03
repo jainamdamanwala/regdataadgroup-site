@@ -100,7 +100,7 @@ export default function Services() {
                   </div>
 
                   {/* Details */}
-                  <div className="rounded-2xl border bg-white p-5 shadow-soft-sm">
+                  <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-green/5 via-white to-brand-blue/5 p-6 shadow-soft-sm">
                     <p className="mb-3 text-sm font-semibold text-slate-900">
                       What we deliver
                     </p>
@@ -108,12 +108,7 @@ export default function Services() {
                       {hero.items.map((it) => (
                         <div
                           key={it}
-                          className="rounded-xl border p-3"
-                          style={{
-                            borderColor: "rgba(var(--brand-blue),0.16)",
-                            background:
-                              "linear-gradient(135deg, rgba(var(--brand-green),0.05), rgba(255,255,255,0.96))",
-                          }}
+                          className="rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-green/5 via-white to-brand-blue/5 p-6 shadow-soft-sm"
                         >
                           <p className="text-sm text-slate-700">{it}</p>
                         </div>

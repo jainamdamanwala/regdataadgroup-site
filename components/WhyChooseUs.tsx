@@ -107,12 +107,7 @@ export default function WhyChooseUs() {
                     {hero.points.map((pt) => (
                       <div
                         key={pt}
-                        className="rounded-xl border p-4 transition"
-                        style={{
-                          borderColor: "rgba(var(--brand-blue),0.16)",
-                          background:
-                            "linear-gradient(135deg, rgba(var(--brand-green),0.05), rgba(255,255,255,0.96))",
-                        }}
+                        className="rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-green/5 via-white to-brand-blue/5 p-6 shadow-soft-sm"
                       >
                         <p className="text-sm text-slate-700">{pt}</p>
                       </div>
