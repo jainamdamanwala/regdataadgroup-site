@@ -7,8 +7,8 @@ import { brand } from "@/lib/content";
 
 // === CONFIG ===
 const USE_CALENDLY_EMBED = false;
-const CALENDLY_URL = "https://calendly.com/REPLACE_ME/consultation";
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_ME";
+const CALENDLY_URL = "https://calendly.com/jainamdamanwala21/consultation";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/maqbveep";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");

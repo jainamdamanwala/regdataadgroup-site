@@ -1,9 +1,9 @@
 export const brand = {
   name: "Reg & Data AdGroup LLC",
+  logo: "/logo.png", // 👈 add this (adjust filename if needed)
   tagline: "Senior Regulatory Strategy. Disciplined Execution. Trusted Under Scrutiny.",
-  locations: ["San Diego, CA", "Morrisville, NC","Las Vegas, NV"],
+  locations: ["San Diego, CA", "Morrisville, NC", "Las Vegas, NV"],
   consultCta: "Let’s Get in Touch — 30-Minute Complimentary Consultation",
-  // Replace with their real scheduling/contact URL (Calendly or similar) if needed:
   consultLink: "#contact",
   metrics: [
     "85+ submissions",
@@ -34,6 +34,7 @@ export const about = {
 export const services = [
   {
     title: "Regulatory Strategy & Pathway Planning",
+    image: "/services/regulatory-strategy.svg",
     items: [
       "Regulatory classification and pathway assessments (FDA, EU, global)",
       "Predicate device identification and substantial equivalence strategy",
@@ -45,6 +46,7 @@ export const services = [
   },
   {
     title: "Regulatory Submissions & Agency Interactions",
+    image: "/services/regulatory-submissions.svg",
     items: [
       "FDA 510(k) submissions (Traditional, Special, eSTAR)",
       "De Novo, Breakthrough Device Designation, and PMA submissions",
@@ -57,6 +59,7 @@ export const services = [
   },
   {
     title: "Lifecycle Management & Change Control",
+    image: "/services/lifecycle-management.svg",
     items: [
       "Post-approval change impact assessments",
       "Regulatory strategy for design, manufacturing, and labeling changes",
@@ -68,6 +71,7 @@ export const services = [
   },
   {
     title: "Clinical, Data & Evidence Strategy",
+    image: "/services/clinical-data-evidence.svg",
     items: [
       "Clinical evidence planning and regulatory alignment",
       "Performance metrics strategy (e.g., sensitivity, specificity, PPA/NPA)",
@@ -79,6 +83,7 @@ export const services = [
   },
   {
     title: "AI/ML & SaMD Regulatory Support",
+    image: "/services/aiml-samd.svg",
     items: [
       "AI/ML SaMD regulatory strategy and classification",
       "Algorithm description and intended use alignment",
@@ -90,6 +95,7 @@ export const services = [
   },
   {
     title: "Quality Systems & Compliance",
+    image: "/services/quality-systems.svg",
     items: [
       "Design controls (21 CFR 820 / ISO 13485)",
       "Risk management (ISO 14971)",
@@ -101,6 +107,7 @@ export const services = [
   },
   {
     title: "Labeling, Claims & Regulatory Communications",
+    image: "/services/labeling-claims.svg",
     items: [
       "Intended use and indication development",
       "Labeling and IFU regulatory review",
@@ -111,6 +118,7 @@ export const services = [
   },
   {
     title: "Program Leadership & Embedded Support",
+    image: "/services/program-leadership.svg",
     items: [
       "Acting regulatory lead or extension of internal RA teams",
       "Cross-functional coordination and submission management",
@@ -142,63 +150,70 @@ export const engagement = {
 };
 
 export const whyChooseUs = {
-  title: "Why Reg & Data AdGroup",
+  title: "Why Choose Us",
   intro:
-    "Regulatory success depends on precision, consistency, and judgment. We deliver regulator-ready strategy and documentation grounded in current FDA and global expectations—minimizing rework, review cycles, and avoidable risk.",
+    "Senior expertise, disciplined execution, and evidence-backed decisions—without enterprise overhead.",
+
   pillars: [
     {
-      title: "Relentless Focus on Quality",
-      points: [
-        "Clear, defensible regulatory narratives",
-        "Internally consistent, submission-ready documentation",
-        "Alignment across intended use, data, risk, and labeling",
-        "Designed to withstand FDA and notified body scrutiny",
-      ],
-    },
-    {
-      title: "Disciplined Timeline Management",
-      points: [
-        "Realistic, well-defined plans",
-        "Proactive dependency and risk management",
-        "Clear milestones and accountability",
-        "Urgent execution without compromising quality",
-      ],
-    },
-    {
-      title: "Senior Leadership, Hands-On Execution",
-      points: [
-        "Average regulatory experience of 18+ years",
-        "Director-level leadership, including former FDA professionals",
-        "Practical judgment informed by real regulatory interactions",
-      ],
-    },
-    {
       title: "Data-Driven Regulatory Strategy",
+      image: "/whychooseus/Data-Driven Regulatory Strategy.svg",
       points: [
-        "Translation of complex clinical, analytical, and AI-driven data into regulator-ready evidence",
-        "Support for intended use, performance claims, and defensible scientific rationale",
+        "Regulatory decisions grounded in evidence, not assumptions",
+        "Risk-based prioritization aligned to product maturity",
+        "Clear traceability between data, strategy, and outcomes",
       ],
     },
     {
       title: "Budget-Conscious, High-Value Engagements",
+      image: "/whychooseus/Budget-Conscious, High-Value Engagements.svg",
       points: [
-        "Lean, right-sized teams",
-        "Clear scopes and transparent pricing",
-        "Focused effort where it matters most—no unnecessary overhead",
+        "Senior expertise without enterprise consulting overhead",
+        "Lean engagement models tailored to actual needs",
+        "Transparent scoping and cost control",
       ],
     },
     {
       title: "Flexible, Client-Centric Partnerships",
+      image: "/whychooseus/Flexible, Client-Centric Partnerships.svg",
       points: [
-        "Project-based, embedded leadership, or strategic advisory models",
-        "Support that scales with organizational needs and program complexity",
+        "Engagements that adapt as your program evolves",
+        "Hands-on collaboration with internal teams",
+        "Support models that scale up or down as needed",
+      ],
+    },
+    {
+      title: "Relentless Focus on Quality",
+      image: "/whychooseus/Relentless Focus on Quality.svg",
+      points: [
+        "Regulatory rigor embedded in every deliverable",
+        "Inspection-ready documentation and processes",
+        "No shortcuts that create downstream risk",
+      ],
+    },
+    {
+      title: "Disciplined Timeline Management",
+      image: "/whychooseus/Disciplined Timeline Management.svg",
+      points: [
+        "Clear milestones and execution accountability",
+        "Early identification of timeline risks",
+        "Proactive mitigation to protect submission dates",
+      ],
+    },
+    {
+      title: "Senior Leadership, Hands-On Execution",
+      image: "/whychooseus/Senior Leadership, Hands-On Execution.svg",
+      points: [
+        "Direct involvement from senior regulatory leaders",
+        "No hand-offs to junior-only teams",
+        "Strategic thinking paired with execution ownership",
       ],
     },
   ],
+
   commitment:
     "We take ownership of our work. We hold ourselves accountable to quality, discipline, and delivery. Our success is measured by our clients’ ability to move confidently through regulatory review and achieve sustainable approvals.",
 };
-
 export const coreValues = {
   title: "Our Core Values",
   values: [

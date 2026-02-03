@@ -10,7 +10,7 @@ export default function TrustStrip() {
         <div className="py-10">
           <ScrollReveal>
             <p
-              className="text-xs font-semibold tracking-wide"
+              className="text-lg font-semibold tracking-wide"
               style={{ color: "rgb(var(--brand-blue))" }}
             >
               TRUSTED REGULATORY COVERAGE
@@ -23,14 +23,14 @@ export default function TrustStrip() {
                 <div className="card">
                   <div className="flex items-start gap-3">
                     {/* Small brand icon */}
-                    <div
+                    {/* <div
                       className="mt-0.5 h-8 w-8 rounded-lg border"
                       style={{
                         borderColor: "rgba(var(--brand-blue),0.25)",
                         background:
                           "linear-gradient(135deg, rgba(var(--brand-green),0.18), rgba(var(--brand-teal),0.18))",
                       }}
-                    />
+                    /> */}
                     <div>
                       <p className="text-sm font-semibold text-slate-800">{p}</p>
                       <p className="mt-1 text-xs text-slate-500">Framework expertise</p>

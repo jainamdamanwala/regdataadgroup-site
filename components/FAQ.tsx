@@ -33,13 +33,21 @@ export default function FAQ() {
   return (
     <section className="section section-muted">
       <Container>
-        <SectionHeader eyebrow="FAQ" title="Common questions" subtitle="Clear answers to accelerate decision-making." />
+        <SectionHeader
+          eyebrow="FAQ"
+          title="Common questions"
+          subtitle="Clear answers to accelerate decision-making."
+        />
 
         <div className="grid gap-4">
           {faqs.map((f, idx) => {
             const isOpen = open === idx;
+
             return (
-              <div key={f.q} className="rounded-2xl border border-slate-200 bg-white shadow-soft-sm">
+              <div
+                key={f.q}
+                className="rounded-2xl border border-slate-200 bg-white shadow-soft-sm"
+              >
                 <button
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   onClick={() => setOpen(isOpen ? null : idx)}
@@ -47,16 +55,66 @@ export default function FAQ() {
                   type="button"
                 >
                   <p className="text-sm font-semibold text-slate-950">{f.q}</p>
-                  <span className="chip">{isOpen ? "Hide" : "View"}</span>
+
+                  {/* Chevron instead of View/Hide */}
+                  <span
+                    className={[
+                      "flex h-9 w-9 flex-none items-center justify-center rounded-full transition",
+                      "border",
+                    ].join(" ")}
+                    style={{
+                      borderColor: isOpen
+                        ? "rgba(var(--brand-teal),0.35)"
+                        : "rgba(var(--brand-blue),0.25)",
+                      background: isOpen
+                        ? "rgba(var(--brand-teal),0.10)"
+                        : "rgba(var(--brand-blue),0.06)",
+                      color: isOpen
+                        ? "rgb(var(--brand-teal))"
+                        : "rgb(var(--brand-blue))",
+                    }}
+                    aria-hidden="true"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className={[
+                        "h-4 w-4 transition-transform duration-300 ease-out",
+                        isOpen ? "rotate-180" : "rotate-0",
+                      ].join(" ")}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </span>
                 </button>
 
-                {isOpen ? (
-                  <div className="px-6 pb-6">
-                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                      <p className="text-sm text-slate-700">{f.a}</p>
+                {/* Animated expand/collapse (no conditional render) */}
+                <div
+                  className={[
+                    "grid transition-[grid-template-rows] duration-300 ease-out",
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                  ].join(" ")}
+                >
+                  <div className="overflow-hidden">
+                    <div
+                      className={[
+                        "px-6 pb-6",
+                        "transition-all duration-300 ease-out",
+                        isOpen
+                          ? "translate-y-0 opacity-100"
+                          : "-translate-y-1 opacity-0",
+                      ].join(" ")}
+                    >
+                      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                        <p className="text-sm text-slate-700">{f.a}</p>
+                      </div>
                     </div>
                   </div>
-                ) : null}
+                </div>
               </div>
             );
           })}

@@ -12,7 +12,7 @@ export default function CoreValues() {
           {coreValues.values.map((v) => (
             <div key={v.title} className="card-muted">
               <div className="flex items-start gap-3">
-                <div className="mt-1 h-10 w-10 rounded-xl border border-slate-200 bg-gradient-to-br from-brand-green/25 via-white to-brand-blue/25" />
+                {/* <div className="mt-1 h-10 w-10 rounded-xl border border-slate-200 bg-gradient-to-br from-brand-green/25 via-white to-brand-blue/25" /> */}
                 <div>
                   <h3 className="text-lg font-semibold text-slate-950">{v.title}</h3>
                   <p className="mt-3 text-slate-600">
